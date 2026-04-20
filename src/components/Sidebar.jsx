@@ -14,7 +14,13 @@ const menus = [
 export default function Sidebar({ open, onClose, collapsed }) {
   return (
     <aside className={`sidebar ${open ? 'open' : ''} ${collapsed ? 'collapsed' : ''}`}>
-      <div className="brand">Remunerasi RS</div>
+      <div className="brand-wrap">
+        <img src="/logo-remunerasi.svg" alt="Logo Remunerasi RS" className="brand-logo" />
+        <div className="brand-text">
+          <strong className="brand">Remunerasi RS</strong>
+          <small>Simulasi distribusi remun</small>
+        </div>
+      </div>
       {menus.map(([to, label]) => (
         <NavLink key={to} to={to} onClick={onClose} className={({ isActive }) => `menu ${isActive ? 'active' : ''}`}>
           {label}
